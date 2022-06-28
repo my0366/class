@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class MainClass {
     public static void main(String[] args) {
         System.out.println("헬로 월드");
@@ -15,7 +17,7 @@ public class MainClass {
         PlayClass pc = new PlayClass();
         int num = pc.play1(name);
         num = pc.play2(num);
-        pc.play3(num);
-
+        ArrayList<ItemClass> list = ns.getItemList();
+        pc.play3(num, list);
     }
 }

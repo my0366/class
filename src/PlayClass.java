@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 public class PlayClass {
@@ -7,6 +9,7 @@ public class PlayClass {
     public PlayClass(){
         sc = new Scanner(System.in);
     }
+
 //    public PlayClass(String name){}
 
     // 메소드 만들기
@@ -39,11 +42,15 @@ public class PlayClass {
         return ret;
     }
 
-    public void play3(int num) {
+    public void play3(int num, ArrayList<ItemClass> list) {
         if (num == 1) {
             System.out.println("그냥 공격");
         } else if (num == 2) {
             System.out.println("아이템 사용");
+            Random random = new Random();
+            int r = random.nextInt(list.size());
+            System.out.println("아이템의 속성은 " + list.get(r).getName() + "임");
         }
+
     }
 }

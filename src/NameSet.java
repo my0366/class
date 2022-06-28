@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class NameSet {
     private String name;
     private Scanner sc;
+    ArrayList<ItemClass> list = new ArrayList<>();
     public NameSet() {
         sc = new Scanner(System.in);
     }
@@ -19,8 +20,7 @@ public class NameSet {
     }
 
     public String getName() {
-        System.out.println("이름 출력 기능능");
-        System.out.println(name + "아 안녕!!!");
+        System.out.println("이름 출력 기능");
         return name;
     }
 
@@ -31,7 +31,7 @@ public class NameSet {
         System.out.print("갯수 입력(너무 많이 하면 힘들어요):");
         int n = sc.nextInt();
         // n 만큼 반복해서 아이템 입력
-        ArrayList<ItemClass> list = new ArrayList<>();
+
         for (int i=0; i<n; i++) {
             // 아이템을 담을 그릇을 만들고
             ItemClass ic = new ItemClass();
@@ -46,13 +46,9 @@ public class NameSet {
             list.add(ic);
 //            System.out.println(i + ". 속성: " + it);
         }
-        // 입력한 아이템들을 출력 해보자
-        System.out.println("입력한 아이템 출력");
-        for (ItemClass ic : list) {
-            System.out.println("아이템 이름: " + ic.getName());
-            System.out.println("아이템 속성: " + ic.getAtt());
-        }
+    }
 
-
+    public ArrayList<ItemClass> getItemList() {
+        return list;
     }
 }
